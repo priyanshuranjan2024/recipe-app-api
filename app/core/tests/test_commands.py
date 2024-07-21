@@ -24,7 +24,7 @@ class CommandTests(SimpleTestCase):
         call_command('wait_for_db')
         
         #check if the check command is called
-        patched_check.assert_called_once_with(database=['default'])
+        patched_check.assert_called_once_with(databases=['default'])
         
     
     @patch('time.sleep')
@@ -38,4 +38,4 @@ class CommandTests(SimpleTestCase):
         
         self.assertEqual(patched_check.call_count,6) #it should be called exactly 6 times
         
-        patched_check.assert_called_with(database=['default'])
+        patched_check.assert_called_with(databases=['default'])
